@@ -5,11 +5,11 @@
   --ink: #1f2421;
   --muted: #7a807b;
   --line: #e6e2da;
-  --accent: #2f5d50;      /* deep pine green */
+  --accent: #222299;      /* deep pine green */
   --accent-soft: #e4ece8;
-  --pos: #3a7d5c;
-  --neg: #b4553f;
-  --neu: #8b8f87;
+  --pos: #8aed7c;
+  --neg: #e4151f;
+  --neu: #777777;
   --radius: 14px;
   font-size: 16px;
 }

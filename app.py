@@ -1,13 +1,3 @@
-"""
-Meme Stock Predictor — Flask backend
-====================================
-Serves the Scandinavian-minimal frontend and a small JSON API on top of:
-  - meme_stock_classifier.py : sentiment classification (labeled data + OpenAI)
-  - stock_data.py            : live prices via yfinance
-  - wsb_labeled.csv          : pre-labeled WSB posts (via model_setup.paths)
-  - ticker_prices.csv        : pre-fetched price snapshot (via model_setup.paths)
-"""
-
 import os
 import re
 import threading

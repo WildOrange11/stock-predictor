@@ -1,26 +1,4 @@
-"""Auto-generated. Provides `paths`. a dict mapping each project file to a
-local path your app.py can load. Files that are too big for Replit live on the
-HuggingFace Hub and are downloaded on first use; everything else stays local.
 
-Usage in app.py:
-
-    import model_setup
-
-    # For Keras / TensorFlow:
-    import tensorflow as tf
-    model = tf.keras.models.load_model(model_setup.paths["my_model.h5"])
-
-    # For scikit-learn / joblib:
-    from joblib import load
-    model = load(model_setup.paths["my_model.joblib"])
-
-    # For HuggingFace Transformers (whole directory):
-    from transformers import AutoModelForSequenceClassification
-    model = AutoModelForSequenceClassification.from_pretrained(model_setup.dir)
-
-`paths` works for any filename present locally OR uploaded to HF Hub. Downloaded
-Hub files are cached, so they only download once per environment.
-"""
 import json, os
 
 _here = os.path.dirname(os.path.abspath(__file__))
