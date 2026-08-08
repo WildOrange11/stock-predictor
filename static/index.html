@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meme Stock Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">Meme Stock Predictor</span>
+      </div>
+      <div class="dataset-pill" id="datasetPill">loading dataset…</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>What does the crowd think?</h1>
+      <p class="sub">Sentiment analysis of r/wallstreetbets posts, matched to live market data. Enter a ticker to see the mood.</p>
+
+      <form id="searchForm" class="search">
+        <input id="tickerInput" type="text" maxlength="5" autocomplete="off" spellcheck="false"
+               placeholder="Ticker, e.g. NVDA" aria-label="Stock ticker" />
+        <button type="submit">Predict</button>
+      </form>
+
+      <div class="examples" id="examples" hidden>
+        <span class="examples-label">Try one</span>
+        <div class="chips" id="exampleChips"></div>
+      </div>
+    </section>
+
+    <section id="status" class="status" hidden></section>
+
+    <section id="result" class="result" hidden>
+      <div class="result-grid">
+        <div class="card verdict-card" id="verdictCard">
+          <div class="card-label">Crowd sentiment</div>
+          <div class="verdict" id="verdictText">—</div>
+          <div class="score-row">
+            <div class="score-track"><div class="score-fill" id="scoreFill"></div><div class="score-zero"></div></div>
+            <div class="score-value" id="scoreValue"></div>
+          </div>
+          <div class="mentions" id="mentionsText"></div>
+          <div class="bars" id="bars"></div>
+        </div>
+
+        <div class="card stock-card" id="stockCard">
+          <div class="card-label">Market snapshot</div>
+          <div class="stock-name" id="stockName">—</div>
+          <div class="price-row">
+            <span class="price" id="stockPrice"></span>
+            <span class="delta" id="stockDelta"></span>
+          </div>
+          <dl class="facts" id="stockFacts"></dl>
+          <div class="source-note" id="sourceNote"></div>
+        </div>
+      </div>
+
+      <div class="card posts-card" id="postsCard" hidden>
+        <div class="card-label">What they're saying</div>
+        <ul class="posts" id="postsList"></ul>
+      </div>
+    </section>
+
+    <section class="card classify-card">
+      <div class="card-label">Classify your own post</div>
+      <p class="classify-sub">Paste any market post and the model will judge its sentiment.</p>
+      <textarea id="classifyText" rows="3" placeholder="e.g. $NVDA will beat earnings, calls printing"></textarea>
+      <div class="classify-row">
+        <button id="classifyBtn" type="button">Classify</button>
+        <div class="classify-result" id="classifyResult"></div>
+      </div>
+      <div class="key-note" id="keyNote" hidden>Custom classification uses OpenAI — add an <code>OPENAI_API_KEY</code> secret to enable it.</div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    Sentiment from 110 labeled r/wallstreetbets posts · prices via Yahoo Finance · not financial advice
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

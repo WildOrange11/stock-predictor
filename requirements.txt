@@ -3,3 +3,10 @@ pandas
 yfinance
 tqdm
 huggingface_hub
+flask
+gunicorn
+huggingface_hub
+openai
+pandas
+tqdm
+yfinance
