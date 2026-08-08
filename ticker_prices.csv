@@ -1,0 +1,3 @@
+ticker,name,current_price,price_change_pct,market_cap,week_52_high,week_52_low,sector
+NOW,"ServiceNow, Inc.",111.23,1.05,114996477952,194.726,81.24,Technology
+PI,"Impinj, Inc.",151.36,2.62,4624715776,247.064,87.36,Technology
