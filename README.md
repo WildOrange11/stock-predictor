@@ -1,3 +1,5 @@
+Contributors: Rishik D, Sourayan D, Kalyan M, Raihana R, Neil S, Anwita T, 
+
 # The Trend Terminal: deployment notes for the build agent
 
 This app has a Python backend: it classifies posts with OpenAI and fetches live

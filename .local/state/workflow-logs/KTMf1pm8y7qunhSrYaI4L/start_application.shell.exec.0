@@ -1,0 +1,95 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.24.0.2:5000
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [08/Aug/2026 20:06:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [08/Aug/2026 20:06:34] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [08/Aug/2026 20:06:34] "[36mGET /app.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [08/Aug/2026 20:06:34] "GET /api/overview HTTP/1.1" 200 -
+[2026-08-08 20:06:37,423] ERROR in app: classification failed
+Traceback (most recent call last):
+  File "/home/runner/workspace/app.py", line 236, in classify
+    result = msc.classify_post(text, flair=flair)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/meme_stock_classifier.py", line 109, in classify_post
+    label   = _call_llm(_build_prompt(text), _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/meme_stock_classifier.py", line 69, in _call_llm
+    response = client.responses.create(model=MODEL, input=prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/resources/responses/responses.py", line 1016, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 1063, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 600, in _build_request
+    kwargs["content"] = openapi_dumps(json_data) if is_given(json_data) and json_data is not None else None
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_utils/_json.py", line 25, in openapi_dumps
+    ).encode()
+      ^^^^^^^^
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 1768-1769: surrogates not allowed
+127.0.0.1 - - [08/Aug/2026 20:06:37] "[35m[1mPOST /api/classify HTTP/1.1[0m" 502 -
+[2026-08-08 20:06:55,979] ERROR in app: classification failed
+Traceback (most recent call last):
+  File "/home/runner/workspace/app.py", line 236, in classify
+    result = msc.classify_post(text, flair=flair)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/meme_stock_classifier.py", line 109, in classify_post
+    label   = _call_llm(_build_prompt(text), _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/meme_stock_classifier.py", line 69, in _call_llm
+    response = client.responses.create(model=MODEL, input=prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/resources/responses/responses.py", line 1016, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 1063, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 600, in _build_request
+    kwargs["content"] = openapi_dumps(json_data) if is_given(json_data) and json_data is not None else None
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_utils/_json.py", line 25, in openapi_dumps
+    ).encode()
+      ^^^^^^^^
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 1768-1769: surrogates not allowed
+127.0.0.1 - - [08/Aug/2026 20:06:55] "[35m[1mPOST /api/classify HTTP/1.1[0m" 502 -
+[2026-08-08 20:06:55,995] ERROR in app: classification failed
+Traceback (most recent call last):
+  File "/home/runner/workspace/app.py", line 236, in classify
+    result = msc.classify_post(text, flair=flair)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/meme_stock_classifier.py", line 109, in classify_post
+    label   = _call_llm(_build_prompt(text), _client)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/meme_stock_classifier.py", line 69, in _call_llm
+    response = client.responses.create(model=MODEL, input=prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/resources/responses/responses.py", line 1016, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 1375, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 1063, in request
+    request = self._build_request(options, retries_taken=retries_taken)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_base_client.py", line 600, in _build_request
+    kwargs["content"] = openapi_dumps(json_data) if is_given(json_data) and json_data is not None else None
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/workspace/.pythonlibs/lib/python3.11/site-packages/openai/_utils/_json.py", line 25, in openapi_dumps
+    ).encode()
+      ^^^^^^^^
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 1768-1769: surrogates not allowed
+127.0.0.1 - - [08/Aug/2026 20:06:55] "[35m[1mPOST /api/classify HTTP/1.1[0m" 502 -
